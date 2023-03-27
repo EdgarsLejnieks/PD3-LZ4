@@ -7,6 +7,8 @@
 // variables -  donkey, donkeyKong
 // constants -  DONKEY, DONKEYKONG
 
+import java.util.*;
+
 class Algorithm {
     public static void comp(String sourceFile, String resultFile){
         //TODO: Implement the encoding component of the algorithm
