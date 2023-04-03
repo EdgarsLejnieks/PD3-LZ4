@@ -7,11 +7,14 @@
 // variables -  donkey, donkeyKong
 // constants -  DONKEY, DONKEYKONG
 
+import java.io.FileInputStream;
 import java.util.*;
 
 public static 
 
 class Algorithm {
+    static Scanner sc = new Scanner(System.in);
+
     //Elvis un Roberts
     public static void comp(String sourceFile, String resultFile){
         //TODO: Implement the encoding component of the algorithm
@@ -20,7 +23,18 @@ class Algorithm {
     //Edgars
     public static void decomp(String sourceFile, String resultFile){
         //TODO: Implement the decoding componenet of the algorithm
-        System.out.println("not implemented");
+
+        System.out.println("not finished");
+
+        System.out.println("archive path: ");
+        String archivePath = sc.nextLine(); //get path of compressed file
+        System.out.println("file path: ");
+        String filePath = sc.nextLine(); //get path to output to
+
+
+        FileInputStream file_input = new FileInputStream(archivePath);
+        // TODO: Decompress file when comp is complete
+        file_input.close();
     }
 
     //Normunds
@@ -36,14 +50,14 @@ class Algorithm {
 }
 
 class Main {
-    static Scanner sc = new Scanner(System.in);
+    static Scanner input_sc = new Scanner(System.in);
     public static void main(){
 
         // 03.04.2023
         // Basic main loop with switch
 
         while(true){
-            String command = sc.nextLine();
+            String command = input_sc.nextLine();
 
 
             switch(command){
