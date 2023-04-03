@@ -9,19 +9,26 @@
 
 import java.util.*;
 
+public static 
+
 class Algorithm {
+    //Elvis un Roberts
     public static void comp(String sourceFile, String resultFile){
         //TODO: Implement the encoding component of the algorithm
     }
 
+    //Edgars
     public static void decomp(String sourceFile, String resultFile){
         //TODO: Implement the decoding componenet of the algorithm
+        System.out.println("not implemented");
     }
 
+    //Normunds
     public static void size(String sourceFile){
         //TODO: Implement function that checks file size in bytes
     }
 
+    //Ričards
     public static void equal(String sourceFile, String sourceFile2){
         //TODO: Implement function that checks if two files are the same
     }
@@ -29,7 +36,34 @@ class Algorithm {
 }
 
 class Main {
+    static Scanner sc = new Scanner(System.in);
     public static void main(){
+
+        // 03.04.2023
+        // Basic main loop with switch
+
+        while(true){
+            String command = sc.nextLine();
+
+
+            switch(command){
+                default: 
+                    System.out.println("wrong command");
+                    continue;
+                case "comp":
+                    comp();
+                    continue;
+                case "decomp":
+                    decomp();
+                    continue;
+                case "size":
+                    decomp();
+                    continue;
+                case "equal":
+                    decomp();
+                    continue;
+            }
+        }
 
     }
     public static void about(){
