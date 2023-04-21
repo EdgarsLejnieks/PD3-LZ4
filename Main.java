@@ -19,36 +19,42 @@ class Main {
 								
 			switch (choiseStr) {
 			case "comp":
-				System.out.print("source file name: ");
+				System.out.print("Source file name: ");
 				sourceFile = sc.next();
-				System.out.print("archive name: ");
+				System.out.print("Archive name: ");
 				resultFile = sc.next();
 				comp(sourceFile, resultFile);
 				break;
 			case "decomp":
-				System.out.print("archive name: ");
+				System.out.print("Archive name: ");
 				sourceFile = sc.next();
-				System.out.print("file name: ");
+				System.out.print("File name: ");
 				resultFile = sc.next();
 				decomp(sourceFile, resultFile);
 				break;
 			case "size":
-				System.out.print("file name: ");
+				System.out.print("File name: ");
 				sourceFile = sc.next();
 				size(sourceFile);
 				break;
 			case "equal":
-				System.out.print("first file name: ");
+				System.out.print("First file name: ");
 				firstFile = sc.next();
-				System.out.print("second file name: ");
+				System.out.print("Second file name: ");
 				secondFile = sc.next();
 				System.out.println(equal(firstFile, secondFile));
 				break;
 			case "about":
 				about();
 				break;
-			case "exit":
-				break loop;
+			default:
+				if (choiseStr.equals("exit")){
+					break loop;
+				}
+				else{
+					System.out.println("Wrong command!");
+					break;
+				}
 			}
 		}
 		sc.close();
