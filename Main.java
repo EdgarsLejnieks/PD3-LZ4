@@ -6,6 +6,15 @@
 // methods -    donkey, donkeyKong
 // variables -  donkey, donkeyKong
 // constants -  DONKEY, DONKEYKONG
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileInputStream;  
+import java.io.File;
+
 
 class Main {
 	public static void main(String[] args) {
@@ -60,9 +69,26 @@ class Main {
 		sc.close();
 }
 
+
 public static void comp(String sourceFile, String resultFile){
-    //TODO: Implement the encoding component of the algorithm
+	File file = new File("myfile.txt");
+	if (!file.exists()) {
+		System.out.println("File: " + sourceFile + " does not exist");
+		return;
+	}
+    try (BufferedReader reader = new BufferedReader(new FileReader(sourceFile));
+         BufferedWriter writer = new BufferedWriter(new FileWriter(resultFile))) {
+        int character;
+        while ((character = reader.read()) != -1) {
+            writer.write(character); // Pagaidām pārraksta to pašu failu uz jaunu failu
+			//TODO: Implement the decoding componenet of the algorithm
+        }
+        System.out.println("File: " + resultFile + " has been compressed");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 }
+
 public static void decomp(String sourceFile, String resultFile){
     //TODO: Implement the decoding componenet of the algorithm
 }
@@ -117,4 +143,5 @@ public static void about(){
         System.out.println("221RDB195, Normunds Paserns, 7.grupa");
         System.out.println("221RDB162, Roberts Andris Barlots, 7.grupa");
         System.out.println("220RX0898, Elvis Avotiņš, 7. grupa");
+}
 }
