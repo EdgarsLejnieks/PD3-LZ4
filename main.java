@@ -37,14 +37,50 @@ class Algorithm {
         file_input.close();
     }
 
-    //Normunds
-    public static void size(String sourceFile){
-        //TODO: Implement function that checks file size in bytes
-    }
 
-    //Ričards
-    public static void equal(String sourceFile, String sourceFile2){
-        //TODO: Implement function that checks if two files are the same
+    //No sagataves replita
+    public static void size(String sourceFile) {
+        try {
+            FileInputStream f = new FileInputStream(sourceFile);
+            System.out.println("size: " + f.available());
+            f.close();
+        }
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public static boolean equal(String firstFile, String secondFile) {
+        try {
+            FileInputStream f1 = new FileInputStream(firstFile);
+            FileInputStream f2 = new FileInputStream(secondFile);
+            int k1, k2;
+            byte[] buf1 = new byte[1000];
+            byte[] buf2 = new byte[1000];
+            do {
+                k1 = f1.read(buf1);
+                k2 = f2.read(buf2);
+                if (k1 != k2) {
+                    f1.close();
+                    f2.close();
+                    return false;
+                }
+                for (int i=0; i<k1; i++) {
+                    if (buf1[i] != buf2[i]) {
+                        f1.close();
+                        f2.close();
+                        return false;
+                    }				
+                }
+                } while (k1 == 0 && k2 == 0);
+                    f1.close();
+                    f2.close();
+                    return true;
+                }
+            catch (IOException ex) {
+                System.out.println(ex.getMessage());
+                return false;
+            }
     }
 
 }
