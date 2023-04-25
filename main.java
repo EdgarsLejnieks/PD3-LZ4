@@ -15,12 +15,12 @@ public static
 class Algorithm {
     static Scanner sc = new Scanner(System.in);
 
-    //Elvis un Roberts
+    //Elvis, Ričards un Roberts
     public static void comp(String sourceFile, String resultFile){
         //TODO: Implement the encoding component of the algorithm
     }
 
-    //Edgars
+    //Edgars un Normunds
     public static void decomp(String sourceFile, String resultFile){
         //TODO: Implement the decoding componenet of the algorithm
 
